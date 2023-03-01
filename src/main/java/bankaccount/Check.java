@@ -16,7 +16,7 @@ public class Check {
     String name;
     public void check() {
     	
-    do{
+   while(option<3){
     	log.info("Enter Your Choice");
         log.info("\n 1.New Account\n 2.Old Account\n 3.Exit");
         Scanner scan = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class Check {
             balance=scan.nextDouble();
             obj = new Accountdetails(name, cardnumber, balance);
             list.add(obj);
-            do
+            while(choice<4)
             {
             log.info("1.deposite 2.withdraw 3.balance 4.Exit");
             choice=scan.nextInt();
@@ -55,7 +55,7 @@ public class Check {
             default:
             log.info("-----");
             }
-          }while(choice<4);
+          }
          break;
        	 
 
@@ -76,7 +76,7 @@ public class Check {
                     log.log(Level.INFO,()->"Account Balance:"+balanc);
                     
                     
-                    do{
+                    while(choose<4){
                     log.info("1.deposite 2.withdraw 3.balance 4.Exit");
                     choose = scan.nextInt();
                     switch(choose) {
@@ -96,7 +96,7 @@ public class Check {
                     default:
                     log.info("----");
                     }
-                }while(choose<4);
+                }
                 }
             }
             if(cardnumber!=number) {
@@ -108,6 +108,6 @@ public class Check {
             default:
            	 log.info("Thank You");
         }
-    }while(option<3);
+    }
     }
 }
