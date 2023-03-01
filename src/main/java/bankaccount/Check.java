@@ -25,7 +25,7 @@ public class Check {
         
 	  switch(option) {
         case 1:
-       	 try {
+       	 
             scan.nextLine();
             log.info("ENTER ACCOUNT HOLDERNAME");
             name = scan.nextLine();
@@ -55,17 +55,12 @@ public class Check {
             default:
             log.info("-----");
             }
-            }while(choice<4);
-       	 }
-       	 catch(Exception e)
-       	 {
-       		 log.log(Level.INFO,()->" "+e);
-       	 }
+          }while(choice<4);
          break;
        	 
 
         case 2:
-       	 try {
+       	 
        	 int i;
        	 log.info("ENTER YOUR NUMBER");
             int number = scan.nextInt();
@@ -108,11 +103,7 @@ public class Check {
            	 log.info("Account is not found so create an account");
             }
        	 }
-       	 catch(Exception e)
-       	 {
-       		 log.log(Level.INFO,()->" "+e);
-       	 }
-            break;
+         break;
             
             default:
            	 log.info("Thank You");
