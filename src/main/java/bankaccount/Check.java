@@ -16,7 +16,7 @@ public class Check {
     String name;
     public void check() {
     	
-   while(option<3){
+    	while(option<3){
     	log.info("Enter Your Choice");
         log.info("\n 1.New Account\n 2.Old Account\n 3.Exit");
         Scanner scan = new Scanner(System.in);
@@ -33,38 +33,23 @@ public class Check {
             cardnumber = scan.nextInt();
             log.info("Enter Initial amount:");
             balance=scan.nextDouble();
+            
             obj = new Accountdetails(name, cardnumber, balance);
+            
+            log.info("Bank Account created:");
+            
+            
             list.add(obj);
-            while(choice<4)
-            {
-            log.info("1.deposite 2.withdraw 3.balance 4.Exit");
-            choice=scan.nextInt();
-            switch(choice) {
-            case 1:
-            obj.deposite();
-            break;
             
-            case 2:
-            obj.withdraw();
-            break;
-            
-            case 3:
-            obj.balance();
-            break;
-            
-            default:
-            log.info("-----");
-            }
-          }
          break;
        	 
 
         case 2:
        	 
        	 int i;
-       	 log.info("ENTER YOUR NUMBER");
+       	    log.info("ENTER YOUR NUMBER");
             int number = scan.nextInt();
-            int choose=0;
+           
             for (i = 0; i < list.size(); i++) {
 
                 if (list.get(i).cardnumber == number) {
@@ -73,41 +58,21 @@ public class Check {
                     int card=list.get(i).cardnumber;
                     log.log(Level.INFO,()->"Account CardNumber:"+card);
                     double balanc=list.get(i).balance;
-                    log.log(Level.INFO,()->"Account Balance:"+balanc);
+                    log.log(Level.INFO,() -> "Account Balance:"+balanc);
                     
                     
-                    while(choose<4){
-                    log.info("1.deposite 2.withdraw 3.balance 4.Exit");
-                    choose = scan.nextInt();
-                    switch(choose) {
-                    
-                    case 1:
-                    obj.deposite();
-                    break;
-                    
-                    case 2:
-                    obj.withdraw();
-                    break;
-                    
-                    case 3:
-                    obj.balance();
-                    break;
-                    
-                    default:
-                    log.info("----");
-                    }
+                    obj.operation();
                 }
-                }
+                
             }
             if(cardnumber!=number) {
            	 log.info("Account is not found so create an account");
             }
-       	 
          break;
             
-            default:
+        default:
            	 log.info("Thank You");
-        }
+           }
     }
-    }
+}
 }
