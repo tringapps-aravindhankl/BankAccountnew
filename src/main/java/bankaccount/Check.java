@@ -77,7 +77,7 @@ public class Check {
                     
                     
                     do{
-                    System.out.println("1.deposite 2.withdraw 3.balance 4.Exit");
+                    log.info("1.deposite 2.withdraw 3.balance 4.Exit");
                     choose = scan.nextInt();
                     switch(choose) {
                     
