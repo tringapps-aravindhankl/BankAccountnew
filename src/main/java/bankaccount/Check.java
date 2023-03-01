@@ -39,14 +39,21 @@ public class Check {
             {
             log.info("1.deposite 2.withdraw 3.balance 4.Exit");
             choice=scan.nextInt();
-            if(choice==1) {
+            switch(choice) {
+            case 1:
             obj.deposite();
-            }
-            else if(choice==2) {
+            break;
+            
+            case 2:
             obj.withdraw();
-            }
-            else if(choice==3) {
+            break;
+            
+            case 3:
             obj.balance();
+            break;
+            
+            default:
+            log.info("-----");
             }
             }while(choice<4);
        	 }
@@ -77,15 +84,22 @@ public class Check {
                     do{
                     System.out.println("1.deposite 2.withdraw 3.balance 4.Exit");
                     choose = scan.nextInt();
+                    switch(choose) {
                     
-                    if(choose==1) {
+                    case 1:
                     obj.deposite();
-                    }
-                    else if(choose==2) {
+                    break;
+                    
+                    case 2:
                     obj.withdraw();
-                    }
-                    else if(choose==3) {
+                    break;
+                    
+                    case 3:
                     obj.balance();
+                    break;
+                    
+                    default:
+                    log.info("----");
                     }
                 }while(choose<4);
                 }
