@@ -14,12 +14,13 @@ public class Check {
     double balance;
     Accountdetails obj =null;
     String name;
+    Scanner scan;
     public void check() {
     	
     	while(option<3){
     	log.info("Enter Your Choice");
         log.info("\n 1.New Account\n 2.Old Account\n 3.Exit");
-        Scanner scan = new Scanner(System.in);
+         scan = new Scanner(System.in);
         option = scan.nextInt();
         int choice=0;
         
@@ -31,33 +32,15 @@ public class Check {
             name = scan.nextLine();
             log.info("ENTER YOUR ACCOUNTNUMBER");
             cardnumber = scan.nextInt();
-            int m=0;
-            for (int i = 0; i < list.size(); i++) {
-
-            if(cardnumber==list.get(i).cardnumber)
-            {
-            		m=1;
-            		log.info("user already exist");
-            }
-             
-            }
-            	            
-            if(m==0)
-            {
-            	log.info("Enter Initial amount:");
-                balance=scan.nextDouble();
-                obj = new Accountdetails(name, cardnumber, balance);
-            	list.add(obj);
-            }
+             enter();
             
-            
-            break;
+         break;
        	 
 
         case 2:
        	 
        	 int i;
-       	    log.info("ENTER YOUR NUMBER");
+       	 log.info("ENTER YOUR NUMBER");
             int number = scan.nextInt();
            
             for (i = 0; i < list.size(); i++) {
@@ -85,5 +68,29 @@ public class Check {
            }
     }
 }
+    public void enter() {
+ 		   int m=0;
+    	 for (int i = 0; i < list.size(); i++) {
+
+             if(cardnumber==list.get(i).cardnumber)
+             {
+             		m=1;
+             		log.info("user already exist");
+             }
+              
+             }
+             	            
+             if(m==0)
+             {
+             	log.info("Enter Initial amount:");
+                 balance=scan.nextDouble();
+                 obj = new Accountdetails(name, cardnumber, balance);
+             	list.add(obj);
+             }
+             
+    }
+ 
+    
 }
+
 
