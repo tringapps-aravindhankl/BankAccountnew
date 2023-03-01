@@ -21,6 +21,7 @@ public class Check {
         log.info("\n 1.New Account\n 2.Old Account\n 3.Exit");
         Scanner scan = new Scanner(System.in);
         option = scan.nextInt();
+        int choice=0;
         
 	  switch(option) {
         case 1:
@@ -30,17 +31,27 @@ public class Check {
             name = scan.nextLine();
             log.info("ENTER YOUR ACCOUNTNUMBER");
             cardnumber = scan.nextInt();
-            log.info("Enter Initial amount:");
-            balance=scan.nextDouble();
+            int m=0;
+            for (int i = 0; i < list.size(); i++) {
+
+            if(cardnumber==list.get(i).cardnumber)
+            {
+            		m=1;
+            		log.info("user already exist");
+            }
+             
+            }
+            	            
+            if(m==0)
+            {
+            	log.info("Enter Initial amount:");
+                balance=scan.nextDouble();
+                obj = new Accountdetails(name, cardnumber, balance);
+            	list.add(obj);
+            }
             
-            obj = new Accountdetails(name, cardnumber, balance);
             
-            log.info("Bank Account created:");
-            
-            
-            list.add(obj);
-            
-         break;
+            break;
        	 
 
         case 2:
@@ -75,3 +86,4 @@ public class Check {
     }
 }
 }
+
