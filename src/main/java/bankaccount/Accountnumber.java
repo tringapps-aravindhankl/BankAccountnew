@@ -3,6 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.LinkedList;
 
 class Accountdetails {
 	   String name;
@@ -44,5 +45,34 @@ class Accountdetails {
     public void balance() {
         log.log(Level.INFO,()->"balance:" + balance);
     }
+    
+    public void operation()
+    {
+    	 int choose=0;
+    	 do{
+             System.out.println("1.deposite 2.withdraw 3.balance 4.Exit");
+             choose = scan.nextInt();
+             
+             switch(choose) {
+             
+             case 1:
+             deposite();
+             break;
+             
+             case 2:
+             withdraw();
+             break;
+             
+             case 3:
+             balance();
+             break;
+             
+             default:
+             log.info("----");
+             }
+         }while(choose<4);
+    }
 }
+
+
 
