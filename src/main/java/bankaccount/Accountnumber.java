@@ -43,7 +43,7 @@ class Accountdetails {
     }
 
     public void balance() {
-        System.out.println("balance:" + balance);
+        log.log(Level.INFO,()->"balance:" + balance);
     }
 }
 
