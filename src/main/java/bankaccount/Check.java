@@ -22,7 +22,7 @@ public class Check {
         log.info("\n 1.New Account\n 2.Old Account\n 3.Exit");
          scan = new Scanner(System.in);
         option = scan.nextInt();
-        int choice=0;
+       
         
 	  switch(option) {
         case 1:
